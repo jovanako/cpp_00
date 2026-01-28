@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:32:39 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/28 22:31:20 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/28 22:54:38 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <iomanip>
 
-PhoneBook::PhoneBook() {};
+PhoneBook::PhoneBook() : contactCount(0), nextIndex(0) {};
 
 PhoneBook::~PhoneBook() {};
 

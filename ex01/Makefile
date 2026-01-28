@@ -6,7 +6,7 @@
 #    By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/28 18:31:50 by jkovacev          #+#    #+#              #
-#    Updated: 2026/01/28 19:12:50 by jkovacev         ###   ########.fr        #
+#    Updated: 2026/01/28 22:48:42 by jkovacev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,15 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = PhoneBook.cpp
+SRCS = PhoneBook.cpp \
+		Contact.cpp \
+		main.cpp
 
 OBJDIR = objects
 OBJS = $(SRCS:%.cpp=$(OBJDIR)/%.o)
 
-DEPS = PhoneBook.hpp
+DEPS = PhoneBook.hpp \
+		Contact.hpp
 
 all: $(NAME)
 
