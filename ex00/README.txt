@@ -37,3 +37,6 @@ Why is this necessary in our loop?
 		-> fully standard-compliant
 		-> fully portable (the code bahaves correctly and compiles without changes on any system,
 							compiler, or architecture that follows the C++ standard)
+
+Mental model to remember:	-> whenever you see: 'something.length()'
+							-> think: I should probably use: 'something::size_type'
