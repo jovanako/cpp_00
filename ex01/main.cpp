@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 19:18:03 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/28 22:51:20 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/29 15:27:17 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "Contact.hpp"
 #include <iostream>
 
-int main()
+int	main()
 {
-	PhoneBook phonebook;
+	PhoneBook	phonebook;
 	
-	std::string command;
+	std::string	command;
 	
 	while (true)
 	{

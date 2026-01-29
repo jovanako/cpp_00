@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 19:15:28 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/28 20:08:50 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/29 15:26:16 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,52 +32,52 @@ Contact::Contact(const std::string& firstName,
 
 Contact::~Contact() {}
 
-const std::string& Contact::getFirstName() const
+const	std::string& Contact::getFirstName() const
 {
 	return firstName;
 }
 
-const std::string& Contact::getLastName() const
+const	std::string& Contact::getLastName() const
 {
 	return lastName;
 }
 
-const std::string& Contact::getNickname() const
+const	std::string& Contact::getNickname() const
 {
 	return nickname;
 }
 
-const std::string& Contact::getPhoneNumber() const
+const	std::string& Contact::getPhoneNumber() const
 {
 	return phoneNumber;
 }
 
-const std::string& Contact::getDarkestSecret() const
+const	std::string& Contact::getDarkestSecret() const
 {
 	return darkestSecret;
 }
 
-void Contact::setFirstName(const std::string& newFirstName)
+void	Contact::setFirstName(const std::string& newFirstName)
 {
 	firstName = newFirstName;
 }
 
-void Contact::setLastName(const std::string& newLastName)
+void	Contact::setLastName(const std::string& newLastName)
 {
 	lastName = newLastName;
 }
 
-void Contact::setNickname(const std::string& newNickname)
+void	Contact::setNickname(const std::string& newNickname)
 {
 	nickname = newNickname;
 }
 
-void Contact::setPhoneNumber(const std::string& newPhoneNumber)
+void	Contact::setPhoneNumber(const std::string& newPhoneNumber)
 {
 	phoneNumber = newPhoneNumber;
 }
 
-void Contact::setDarkestSecret(const std::string& newDarkestSecret)
+void	Contact::setDarkestSecret(const std::string& newDarkestSecret)
 {
 	darkestSecret = newDarkestSecret;
 }

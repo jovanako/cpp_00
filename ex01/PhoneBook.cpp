@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:32:39 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/28 22:54:38 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/01/29 15:26:56 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ PhoneBook::PhoneBook() : contactCount(0), nextIndex(0) {};
 
 PhoneBook::~PhoneBook() {};
 
-void PhoneBook::addContact()
+void	PhoneBook::addContact()
 {
 	std::string firstName;
 	
@@ -87,14 +87,14 @@ void PhoneBook::addContact()
 	std::cout << "Contact added successfully!\n";
 }
 
-std::string PhoneBook::formatField(const std::string& str) const
+std::string	PhoneBook::formatField(const std::string& str) const
 {
 	if (str.length() > 10)
 		return str.substr(0, 9) + ".";
 	return str;
 }
 
-void PhoneBook::searchContacts() const
+void	PhoneBook::searchContacts() const
 {
 	if (contactCount == 0)
 	{
