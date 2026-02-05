@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 19:15:36 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/29 15:27:51 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/02/05 19:12:01 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@
 class Contact
 {
 	private:
-		std::string	firstName;
-		std::string lastName;
-		std::string nickname;
-		std::string phoneNumber;
-		std::string darkestSecret;
+		std::string	_firstName;
+		std::string _lastName;
+		std::string _nickname;
+		std::string _phoneNumber;
+		std::string _darkestSecret;
 
 	public:
 		Contact();	// default constructor

@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:32:51 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/29 15:27:40 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/02/05 19:13:42 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class PhoneBook
 {
 	private:
-		Contact	contacts[8];
-		int		contactCount;
-		int		nextIndex;
+		Contact	_contacts[8];
+		int		_contactCount;
+		int		_nextIndex;
 
 	public:
 		PhoneBook();

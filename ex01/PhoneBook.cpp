@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:32:39 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/29 15:26:56 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/02/05 19:15:07 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <iomanip>
 
-PhoneBook::PhoneBook() : contactCount(0), nextIndex(0) {};
+PhoneBook::PhoneBook() : _contactCount(0), _nextIndex(0) {};
 
 PhoneBook::~PhoneBook() {};
 
@@ -71,18 +71,18 @@ void	PhoneBook::addContact()
 	}
 
 	// save into the contact at nextIndex
-	contacts[nextIndex].setFirstName(firstName);
-	contacts[nextIndex].setLastName(lastName);
-	contacts[nextIndex].setNickname(nickname);
-	contacts[nextIndex].setPhoneNumber(phoneNumber);
-	contacts[nextIndex].setDarkestSecret(darkestSecret);
+	_contacts[_nextIndex].setFirstName(firstName);
+	_contacts[_nextIndex].setLastName(lastName);
+	_contacts[_nextIndex].setNickname(nickname);
+	_contacts[_nextIndex].setPhoneNumber(phoneNumber);
+	_contacts[_nextIndex].setDarkestSecret(darkestSecret);
 
-	if (contactCount < 8)
-		contactCount++;
+	if (_contactCount < 8)
+		_contactCount++;
 	
-	nextIndex++;
-	if (nextIndex == 8)
-		nextIndex = 0;
+	_nextIndex++;
+	if (_nextIndex == 8)
+		_nextIndex = 0;
 	
 	std::cout << "Contact added successfully!\n";
 }
@@ -96,22 +96,22 @@ std::string	PhoneBook::formatField(const std::string& str) const
 
 void	PhoneBook::searchContacts() const
 {
-	if (contactCount == 0)
+	if (_contactCount == 0)
 	{
 		std::cout << "Phonebook is empty.\n";
 		return;
 	}
 	
-	for (int i = 0; i < contactCount; i++)
+	for (int i = 0; i < _contactCount; i++)
 	{
 		std::cout << "|"
 				  << std::setw(10) << i
 				  << "|"
-				  << std::setw(10) << formatField(contacts[i].getFirstName())
+				  << std::setw(10) << formatField(_contacts[i].getFirstName())
 				  << "|"
-				  << std::setw(10) << formatField(contacts[i].getLastName())
+				  << std::setw(10) << formatField(_contacts[i].getLastName())
 				  << "|"
-				  << std::setw(10) << formatField(contacts[i].getNickname())
+				  << std::setw(10) << formatField(_contacts[i].getNickname())
 				  << "|\n";
 	}
 
@@ -127,13 +127,13 @@ void	PhoneBook::searchContacts() const
 	}
 	
 	int index = input[0] - '0';
-	if (index < 0 || index >= contactCount)
+	if (index < 0 || index >= _contactCount)
 	{
 		std::cout << "Index out of range.\n";
 		return ;
 	}
 
-	const Contact& c = contacts[index];
+	const Contact& c = _contacts[index];
 
 	std::cout << "First name: " << c.getFirstName() << "\n";
 	std::cout << "Last name: " << c.getLastName() << "\n";
