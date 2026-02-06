@@ -6,19 +6,12 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 15:47:28 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/01/28 18:26:34 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/02/06 08:56:14 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cctype>
-
-/*	std::string arg(...);	-> This is object construction
-								- 'arg' is a std::string object
-								- the parentheses call a constructor
-	So this line means:
-		"Create a std::string named 'arg' and initialize it using the C-string argv[i]."
-*/
 
 int main(int argc, char **argv)
 {
