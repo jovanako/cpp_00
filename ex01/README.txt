@@ -47,3 +47,10 @@ PHONEBOOK:
 					until the newline character is found
 				- the extraction also stops if the end of file is reached in 'is' or
 					if some other error occurs during the input operation
+
+Why use static_cast<unsigned char>?
+
+In C++98, the isalpha() and isdigit() functions expect an int 
+that can be represented as an unsigned char or EOF. 
+Passing a signed char directly can lead to undefined behavior 
+if the string contains special characters with negative ASCII values.
