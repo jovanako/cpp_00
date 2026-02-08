@@ -6,7 +6,7 @@
 /*   By: jkovacev <jkovacev@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:32:39 by jkovacev          #+#    #+#             */
-/*   Updated: 2026/02/06 21:59:31 by jkovacev         ###   ########.fr       */
+/*   Updated: 2026/02/08 10:31:10 by jkovacev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ PhoneBook::~PhoneBook() {};
 
 void	PhoneBook::addContact()
 {
+	// Get first name from user input
 	std::string firstName;
 	
 	while (firstName.empty())
@@ -34,6 +35,7 @@ void	PhoneBook::addContact()
 			std::cout << "First name cannot be empty. Please try again.\n";
 	}
 
+	// Get last name from user input
 	std::string lastName;
 	
 	while (lastName.empty())
@@ -47,6 +49,7 @@ void	PhoneBook::addContact()
 			std::cout << "Last name cannot be empty. Please try again.\n";
 	}
 
+	// Get nickname from user input
 	std::string nickname;
 
 	while (nickname.empty())
@@ -60,12 +63,12 @@ void	PhoneBook::addContact()
 			std::cout << "Nickname cannot be empty. Please try again.\n";
 	}
 
+	// Get phone number from user input
 	std::string phoneNumber;
 
 	while (true)
 	{
-		std::cout << "Phone number: ";
-		
+		std::cout << "Phone number: ";		
 		if (!std::getline(std::cin, phoneNumber)) {
 			std::cout << std::endl;
 			return;
@@ -76,6 +79,7 @@ void	PhoneBook::addContact()
 			continue;
 		}
 		
+		// Check if phone number is valid
 		bool isValid = true;
 		std::string::size_type i = 0;
 		
@@ -99,6 +103,7 @@ void	PhoneBook::addContact()
 			std::cout << "Invalid input. Please use only digits or a leading '+'.\n";
 	}
 
+	// Get darkest secret from user input
 	std::string darkestSecret;
 
 	while (darkestSecret.empty())
@@ -112,6 +117,7 @@ void	PhoneBook::addContact()
 			std::cout << "Darkest secret cannot be empty. Please try again.\n";
 	}
 
+	// Add all contact details to the list of contacts
 	_contacts[_nextIndex].setFirstName(firstName);
 	_contacts[_nextIndex].setLastName(lastName);
 	_contacts[_nextIndex].setNickname(nickname);
@@ -143,6 +149,7 @@ void	PhoneBook::searchContacts() const
 		return;
 	}
 	
+	// Display table of the chosen contact's details
 	for (int i = 0; i < _contactCount; i++)
 	{
 		std::cout << "|"
@@ -156,6 +163,7 @@ void	PhoneBook::searchContacts() const
 				  << "|\n";
 	}
 
+	// Get index from user input
 	std::string input;
 	int index;
 	while (true) {
@@ -182,6 +190,7 @@ void	PhoneBook::searchContacts() const
 			break;
 	}
 
+	// Display full list of chosen contact's details
 	const Contact& c = _contacts[index];
 
 	std::cout << "First name: " << c.getFirstName() << "\n";
