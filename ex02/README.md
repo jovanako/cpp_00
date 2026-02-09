@@ -1,8 +1,10 @@
-In Account.hpp the private variables:
-	- static variables belong to the bank
-	- non-static variables belong to one account
+## In Account.hpp
+	- the private variables:
+		- static variables belong to the bank
+		- non-static variables belong to one account
 
-STATIC	- there is exactly one copy of this variable, no matter how many Account objects exist
+## STATIC	
+		- there is exactly one copy of this variable, no matter how many Account objects exist
 		- every account	- sees the same values
 						- updates the same counters
 		- if you create 10 accounts, all accounts see '_nbAccounts == 10'
@@ -12,19 +14,20 @@ STATIC	- there is exactly one copy of this variable, no matter how many Account 
 		- with 3 accounts, we would have 3 "total amounts" which doesn't make sense
 		- so: anything representing a GLOBAL STATE must be STATIC
 
-NON-STATIC	- these describe one specific account instance
-			- '_accountIndex':
-				- each account	- has a unique index
-								- that index never changes
-								- two accounts must NEVER share the same index
-			- '_amount':
-				- two accounts can have different balances at the same time
+## NON-STATIC	
+		- these describe one specific account instance
+```_accountIndex```:
+	- each account	- has a unique index
+					- that index never changes
+					- two accounts must NEVER share the same index
+```_amount```:
+	- two accounts can have different balances at the same time
 
-			- '_nbDeposits':
-				- one account might have 5 deposits, another 0 deposits
-				- clearly not global
+```_nbDeposits```:
+	- one account might have 5 deposits, another 0 deposits
+	- clearly not global
 			
-Why -displayTimestamp() is static:
+### Why ```displayTimestamp()``` is static:
 		This function:
 			- doesn't depend on any account
 			- prints the current time
@@ -35,24 +38,26 @@ Why -displayTimestamp() is static:
 			- can only access static data
 			- are utility functions for the class
 
-Why the default constructor is private:
+### Why the default constructor is private:
 		- this is a design restriction
 		- it means you are not allowed to create an account without an initial amount
 		This guarantees:
 				- every account starts with a defined balance
 				- no "uninitialized" accounts exist
 
-A MENTAL MODEL:
+## A MENTAL MODEL:
 
 	THE BANK (CLASS)						EACH ACCOUNT(OBJECT)
 	- knows totals							- knows its own balance
 	- knows how many accounts exist			- knows its own history
 	- prints global info					- has its own identity
 
-STATIC:		bank-wide memory
-NON-STATIC:	account-specific memory
+### STATIC:		
+	bank-wide memory
+### NON-STATIC:
+	account-specific memory
 
-MEMBER INITIALIZER LIST:
+## MEMBER INITIALIZER LIST:
 	- only non-static data members can (and should) appear in the member initializer list
 
 	- the initializer list initializes the data that belongs to the object being constructed
@@ -61,13 +66,14 @@ MEMBER INITIALIZER LIST:
 		- needs to be initialized at construction time
 	can go there.
 
-Static members	- do not belong to any specific object
-				- exist once for the entire program
-				- are initialized OUTSIDE the constructor (in the .cpp)
+## Static members	
+	- do not belong to any specific object
+	- exist once for the entire program
+	- are initialized OUTSIDE the constructor (in the .cpp)
 
 So when an Account object is constructed, static members already exist - they are not part of the object.
 
-TIMESTAMP
+## TIMESTAMP
 	- time_t time(time_t* timer);
 			- get the current calendar time as a value of type 'time_t'
 			- returns this value, and if the argument is not a null pointer,
@@ -92,7 +98,7 @@ TIMESTAMP
 		- this copies the contents of 'buffer' into a safer,
 			more flexible C++ string object
 
-TEST to add to Makefile:
+### TEST to add to Makefile:
 	test: $(NAME)
 	./$(NAME) | cut -d ' ' -f 2- > my_log.log
 	cat 19920104_091532.log | cut -d ' ' -f 2- > ref_log.log

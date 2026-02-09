@@ -1,4 +1,4 @@
-GOAL:
+# GOAL:
 	- write a small terminal-based phonebook program that:
 		-> runs in a loop
 		-> accepts only three commands: ADD, SEARCH, EXIT
@@ -8,7 +8,7 @@ GOAL:
 	- this simulates an old-school phonebook program 
 		with very limited memory
 
-CONTACT CLASS:
+## CONTACT CLASS:
 	- this represents one person in the phonebook
 	- required fields:	- first name
 						- last name
@@ -19,7 +19,7 @@ CONTACT CLASS:
 		directly modify contact data
 	- IMPORTANT: no field can be empty
 
-PHONEBOOK CLASS:
+## PHONEBOOK CLASS:
 	- this class manages contacts
 	- required properties:	- an array of 8 contact objects
 							- no dynamic allocation -> use a fixed array
@@ -30,13 +30,13 @@ PHONEBOOK CLASS:
 At startup:	- phonebook is empty
 			- program waits for user input
 
-Accepted commands:
+### Accepted commands:
 	- ADD		- add a new contact
 	- SEARCH	- display and inspect contacts
 	- EXIT		- quit program
 	anything else - ignored
 
-PHONEBOOK:
+## PHONEBOOK:
 	- bool empty() const;	- tests if string is empty
 							- returns whether the string is empty
 							- does not modify the value of the string in any way
@@ -48,7 +48,7 @@ PHONEBOOK:
 				- the extraction also stops if the end of file is reached in 'is' or
 					if some other error occurs during the input operation
 
-Why use static_cast<unsigned char>?
+## Why use static_cast<unsigned char>?
 
 In C++98, the isalpha() and isdigit() functions expect an int 
 that can be represented as an unsigned char or EOF. 
